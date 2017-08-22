@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  server:
+    image: everydayhero/statsd:latest
+    environment:
+      LIBRATO_USER: "external-services@everydayhero.com.au"
+      LIBRATO_SOURCE: "convox"
+    ports:
+      - 8125/udp
+    labels:
+      - convox.agent=true
